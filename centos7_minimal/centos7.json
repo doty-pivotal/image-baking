@@ -26,8 +26,13 @@
   "post-processors": [
     [
       {
+        "keep_input_artifact": true,
         "output": "builds/{{.Provider}}-centos7.box",
         "type": "vagrant"
+      },
+      {
+        "output": "manifest.json",
+        "type": "manifest"
       }
     ]
   ]

@@ -17,6 +17,12 @@
       "vm_name": "centos7_virtualbox"
     }
   ],
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "./playbook.yml"
+    }
+  ],
   "post-processors": [
     [
       {

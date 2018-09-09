@@ -1,0 +1,6 @@
+---
+- name: Install VirtualBox Guest Additions
+  hosts: default
+  roles:
+    - role: PeterMosmans.virtualbox-guest
+

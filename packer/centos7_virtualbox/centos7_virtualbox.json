@@ -19,8 +19,12 @@
   ],
   "provisioners": [
     {
+      "type": "shell-local",
+      "command": "ansible-galaxy install -v -r ./ansible/requirements.yml -p ./ansible/roles"
+    },
+    {
       "type": "ansible",
-      "playbook_file": "./playbook.yml"
+      "playbook_file": "./ansible/playbook.yml"
     }
   ],
   "post-processors": [

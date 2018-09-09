@@ -1,9 +1,0 @@
----
-- name: A demo
-  hosts: default
-  tasks:
-    - name: Add a file to root's home dir
-      copy:
-        dest: /root/foo
-        content: Hello World!
-        owner: root

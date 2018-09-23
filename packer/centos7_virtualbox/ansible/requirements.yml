@@ -1,3 +1,3 @@
-- src: https://github.com/PeterMosmans/ansible-role-virtualbox-guest.git
+- src: https://github.com/vigiljt/ansible-role-virtualbox-guest.git
   version: master
   name: PeterMosmans.virtualbox-guest

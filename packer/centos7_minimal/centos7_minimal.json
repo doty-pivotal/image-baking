@@ -32,10 +32,6 @@
         "keep_input_artifact": true,
         "output": "builds/{{.Provider}}-centos7_minimal.box",
         "type": "vagrant"
-      },
-      {
-        "output": "manifest.json",
-        "type": "manifest"
       }
     ]
   ]

@@ -1,0 +1,36 @@
+{
+  "builders": [
+    {
+      "type": "virtualbox-ovf",
+      "http_directory": "http",
+      "source_path": "../centos7_virtualbox/builds/centos7_virtualbox.ovf",
+      "output_directory": "builds",
+      "ssh_username": "root",
+      "ssh_password": "password",
+      "ssh_port": 22,
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "echo 'packer' | sudo -S shutdown -P now",
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "4096"],
+        ["modifyvm", "{{.Name}}", "--cpus", "4"]
+      ],
+      "vm_name": "centos7_dev"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "./ansible/playbook.yml"
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "keep_input_artifact": true,
+        "output": "builds/{{.Provider}}-centos7_dev.box",
+        "type": "vagrant"
+      }
+    ]
+  ]
+}
+
